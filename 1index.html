@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="1index.css">
+</head>
+<body>
+    
+    
+
+				<div class="cot-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select-gender" id="inlineFormSelectPref" >
+                    <option value="성별">성별</option>
+                    <option value="남성" id="male">남성</option>
+                    <option value="여성" id="female">여성</option>
+
+                </select>
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select-item" id="inlineFormSelectPref">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+                    <option value="카테고리">카테고리</option> 
+                    <option value="helmet" id="helmet">헬멧</option>
+                    <option value="상의" id="consultation">상의</option>
+                    <option value="하의" id="Bottoms">하의</option>
+                    <option value="글러브" id="gloves">글러브</option>
+                    <option value="부츠" id="shoes">부츠</option>
+                    <option value="기타" id="Other">기타</option>
+                    
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <form method="get" action="/search" role="search">
+                        <label for="user-search">사이트 내 검색</label>
+                            <input
+                            type="search"
+                            id="user-search"
+                            name="query"
+                            placeholder="상품명을 입력하세요."
+                            aria-label="사이트 내용을 통해 검색">
+                            <button class="btn btn-primary" type="submit">검색</button>
+                        </form>
+                    </div>
+                </select>
+                <button class="btn btn-primary">Log in/회원가입</button>
+
+            <!--
+            </div>
+            <div class="col-3"> -->
+                <!-- input 입력창 코드를 넣어주세요 -->
+              <!---
+              </div>
+              <div class="col-auto">-->
+                <!-- 조회버튼 코드를 넣어주세요 -->
+        <!---  </div>   -->
+          </form>
+          <div class="container mt-3">
+        <table class="table table-sm">
+            <thead>
+                <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">카테고리</th>
+                        <th scope="col">브랜드</th>
+                        <th scope="col">상품종류</th>
+                        <th scope="col">상품명</th>
+                        <th scope="col">가격</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                      <tr>
+                        <th scope="row">헬멧</th>
+                        <td>아라이-ARAI</td>
+                        <td>RX-7X</td>
+                        <td>SRC 카본 풀페이스 헬멧</td>
+                        <td>3,450,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">상의</th>
+                        <td>알파인스타-ALPINESTARS'</td>
+                        <td>가죽자켓</td>
+                        <td>MISSILE V2 IGNITION LEATHER JACKET - BLACK RED FLUO</td>
+                        <td>910,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">하의</th>
+                        <td>맥슬러-MAXER</td>
+                        <td>올웨더(4계절)</td>
+                        <td>MJ-1617 그레이</td>
+                        <td>150,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">글러브</th>
+                        <td>알파인스타-ALPINESTARS</td>
+                        <td>롱 글러브</td>
+                        <td>레이싱 롱 글러브 GP PLUS R V2 GLOVES - BLACK WHITE'</td>
+                        <td>290,000</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">부츠</th>
+                        <td>알파인스타-ALPINESTARS</td>
+                        <td>롱 부츠</td>
+                        <td>슈퍼테크 알 타공 버전 오토바이 롱부츠 SUPERTECH R VENTED BLACK WHITE</td>
+                        <td>720,000</td>
+                      </tr>
+                      <tr>
+                      <th scope="row">기타 바이크용품</th>
+                        <td>알파인스타-ALPINESTARS</td>
+                        <td>슈트</td>
+                        <td>레이싱슈트 RACING ABSOLUTE V2 1 PC LEATHER SUIT - BLACK WHITE RED FLUO</td>
+                        <td>150,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            <tbody id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+	    </div>
+    </div>
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+   <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+      const data = [
+        { category: "헬멧", brand: '아라이-ARAI', product1: 'RX-7X',
+           product2: 'SRC 카본 풀페이스 헬멧', price: '3,450,000' },
+        { category: "하의", brand: '맥슬러-MAXER', product1: '올웨더(4계절)', product2: 'MJ-1617 그레이', 
+          price: '150,000' },
+        { category: "상의", brand: '알파인스타-ALPINESTARS', product1: '가죽자켓', 
+          product2: 'MISSILE V2 IGNITION LEATHER JACKET - BLACK RED FLUO', price: '910,000'},
+        { category: "글러브", brand: '알파인스타-ALPINESTARS', product1: '롱 글러브', 
+          product2: '레이싱 롱 글러브 GP PLUS R V2 GLOVES - BLACK WHITE' , price: '290,000' },
+        { category: "부츠", brand: '알파인스타-ALPINESTARS', product1: '롱 부츠',
+          product2: '슈퍼테크 알 타공 버전 오토바이 롱부츠 SUPERTECH R VENTED BLACK WHITE', price: '720,000' },
+        { category: "기타 바이크용품", brand: '알파인스타-ALPINESTARS', 
+          product1: '슈트', product2: '레이싱슈트 RACING ABSOLUTE V2 1 PC LEATHER SUIT - BLACK WHITE RED FLUO', 
+          price: '150,000' },
+          // ...
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      
+      data.forEach((item) => {
+          const row = dataTable.insertRow();
+          row.insertCell(0).innerHTML = item.category;
+          row.insertCell(1).innerHTML = item.brand;
+          row.insertCell(2).innerHTML = item.product;
+          row.insertCell(3).innerHTML = item.price;
+      });
+        
+      
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
