@@ -40,3 +40,4 @@ form.addEventListener("submit", function(event){
             (`<p>원하는 직무 : ${userPosition}</p>`)
         
 })
+
